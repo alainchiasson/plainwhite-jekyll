@@ -8,7 +8,13 @@
 <body>
   <main class="container">
     <section class="about">
+      
+      {%- if site.plainwhite.portfolio_image contains '://' -%}
+      <a href="{{ "/" | relative_url}}"><img src="{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}"></a>
+      {%- else -%}
       <a href="{{ "/" | relative_url}}"><img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}"></a>
+      {%- endif -%}
+
       <h2 id="title">
         <a href="{{ "/" | relative_url }}">{{ site.plainwhite.name }}</a>
       </h2>
